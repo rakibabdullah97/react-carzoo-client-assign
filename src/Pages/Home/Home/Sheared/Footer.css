@@ -1,0 +1,24 @@
+.footer{
+    background: #152F4F;
+    color:white;
+    
+}
+ul{
+    list-style-type: none;
+}
+li a{
+    color: rgb(255, 255, 255);
+    transition: color .2s;
+    text-decoration: none;
+}
+li a:hover{
+    text-decoration:none;
+        color:#4180CB;
+}
+.about-company  {
+      color:#c7d9ee;
+      transition: color .2s;
+}
+.about-company :hover{
+    color:rgb(244, 248, 31);
+}    
