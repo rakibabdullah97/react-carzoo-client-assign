@@ -3,6 +3,7 @@ import { Spinner } from 'react-bootstrap';
 import ExploreProduct from '../ExploreProducts/ExploreProduct';
 import Footer from '../Home/Home/Sheared/Footer';
 import Navigation from '../Home/Home/Sheared/Navigation';
+import './Explore.css'
 
 const Explore = () => {
     const [products, setProducts] = useState([])
@@ -16,9 +17,12 @@ const Explore = () => {
     return (
         <div>
             <Navigation></Navigation>
-            <h1>this is products {products.length}</h1>
+            <div>
+                <img className='img-fluid' src='https://i.ibb.co/XLM7LRP/dom.jpg' alt='' />
+            </div>
+
             {
-                (products.length !== 0) ? <div className='container mb-5'>
+                (products.length !== 0) ? <div className='container mb-5 cart'>
                     <h1 className='text-center text-warning my-5 fw-bold'>Browse Our Latest Cars </h1>
                     <div className=' row row-cols-1 row-cols-md-3 g-4'>
                         {

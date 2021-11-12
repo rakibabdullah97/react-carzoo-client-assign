@@ -1,0 +1,8 @@
+.cart{
+    margin-top: -393px;
+}
+@media only screen and (max-width: 600px) {
+    .cart{
+        margin-top: -100px;
+    }
+  }
