@@ -47,7 +47,7 @@ const Review = () => {
                 </div>
                 <div className="mb-3">
                     <label for="exampleFormControlInput1" className="form-label">Rate Us</label>
-                    <input maxLength="5" onChange={handleRate} type="number" className="form-control" id="exampleFormControlInput1" placeholder="Rate" />
+                    <input maxLength="5" onChange={handleRate} type="number" className="form-control" id="exampleFormControlInput1" placeholder="Rate 1 to 5" />
 
                 </div>
                 <div className="mb-3">
