@@ -9,10 +9,10 @@ const Product = ({ product }) => {
                 <img style={{ height: 250 }} src={img} className="card-img-top img-fluid img-responsive" alt="..." />
                 <div className="card-body">
                     <h5 className="card-title">{name}</h5>
-                    <p className="card-text">{info}</p>
+                    <p className="card-text">{info.slice(0,85)}</p>
                     <h5 className='text-danger'> $ {price}</h5>
                     <Link to={`./buyproducts/${_id}`}>
-                        <button type="button" className="book-btn btn btn-danger">Buy</button>
+                        <button type="button" className="book-btn btn btn-warning">Buy Now</button>
                     </Link>
                 </div>
             </div>

@@ -36,7 +36,7 @@ const AddProduct = () => {
 
     const handleAddProduct = () => {
         console.log(product)
-        fetch('http://localhost:5000/products', {
+        fetch('https://stark-plains-85592.herokuapp.com/products', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

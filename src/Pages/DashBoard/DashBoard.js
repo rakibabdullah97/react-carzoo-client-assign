@@ -30,16 +30,18 @@ import MyOrders from './MyOrders/MyOrders';
 import Review from './Review/Review';
 import PayNow from './PayNow/PayNow';
 import useAuth from '../../Hooks/useAuth';
+import AdminRoute from '../Login/AdminRoute/AdminRoute';
+import DashBoardHome from './DashBoardHome/DashBoardHome';
 
 
 const drawerWidth = 200;
 
 function DashBoard(props) {
     const { window } = props;
-    const { logOut,user } = useAuth()
+    const { logOut, user, admin } = useAuth()
     const [mobileOpen, setMobileOpen] = React.useState(false);
     let { path, url } = useRouteMatch();
-    
+
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
@@ -48,12 +50,13 @@ function DashBoard(props) {
         <div className='container text-center'>
             <Toolbar />
             <h1 className='text-warning'>Carzoo</h1>
-            <Divider />
             {user?.email && <span
                 className='mx-3 my-3'
                 style={{ color: 'Dark' }}
             >  Hello  {user.displayName}</span>}
-            <Box>
+            <Divider />
+
+            {admin && <Box>
                 <Link to={`${url}/addProduct`}>
                     <h5>Add Product</h5>
                 </Link>
@@ -66,22 +69,22 @@ function DashBoard(props) {
                 <Link to={`${url}/makeAdmin`}>
                     <h5> Make Admin</h5>
                 </Link>
-            </Box>
-            <Link to={`${url}/myOrders`}>
-                <h5>My Orders</h5>
-            </Link>
-            <Link to={`${url}/review`}>
-                <h5>Review</h5>
-            </Link>
-            <Link to={`${url}/payNow`}>
-                <h5>PAy Now</h5>
-            </Link>
+            </Box>}
+            {!admin && <Box>
+                <Link to={`${url}/myOrders`}>
+                    <h5>My Orders</h5>
+                </Link>
+                <Link to={`${url}/review`}>
+                    <h5>Review</h5>
+                </Link>
+                <Link to={`${url}/payNow`}>
+                    <h5>PAy Now</h5>
+                </Link>
+            </Box>}
             <button onClick={logOut} className='btn btn-danger m-2' color='inherit'>Log out</button>
             <Link to='/'> <br />
                 <button className='btn btn-warning m-2' color='inherit'>Home</button>
             </Link>
-
-
         </div>
     );
 
@@ -150,18 +153,18 @@ function DashBoard(props) {
             >
                 <Toolbar />
                 <Switch>
-                    <Route path={`${path}/makeAdmin`}>
+                    <AdminRoute path={`${path}/makeAdmin`}>
                         <MakeAdmin></MakeAdmin>
-                    </Route>
-                    <Route path={`${path}/addProduct`}>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/addProduct`}>
                         <AddProduct></AddProduct>
-                    </Route>
-                    <Route path={`${path}/manageProduct`}>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/manageProduct`}>
                         <ManageProduct></ManageProduct>
-                    </Route>
-                    <Route path={`${path}/manageAllOrder`}>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/manageAllOrder`}>
                         <MAnageAllOrder></MAnageAllOrder>
-                    </Route>
+                    </AdminRoute>
                     <Route path={`${path}/myOrders`}>
                         <MyOrders></MyOrders>
                     </Route>
@@ -172,7 +175,7 @@ function DashBoard(props) {
                         <PayNow></PayNow>
                     </Route>
                     <Route path={`${path}/`}>
-                        <PayNow></PayNow>
+                        <DashBoardHome></DashBoardHome>
                     </Route>
 
                 </Switch>

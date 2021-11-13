@@ -31,7 +31,7 @@ const BuyProducts = () => {
         newBuying.status = "pending..."
         setBuying(newBuying)
 
-        fetch('http://localhost:5000/buyProduct', {
+        fetch('https://stark-plains-85592.herokuapp.com/buyProduct', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(buying)
@@ -48,7 +48,7 @@ const BuyProducts = () => {
 
     // single product search by id
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${productId}`)
+        fetch(`https://stark-plains-85592.herokuapp.com/products/${productId}`)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])

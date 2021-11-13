@@ -9,7 +9,7 @@ const MyOrders = () => {
 
     //data fetched from server
     useEffect(() => {
-        fetch(`http://localhost:5000/myBuying/${user?.email}`)
+        fetch(`https://stark-plains-85592.herokuapp.com/myBuying/${user?.email}`)
             .then(res => res.json())
             .then(data => setMyOrder(data))
     }, [user.email])
@@ -18,7 +18,7 @@ const MyOrders = () => {
     const handleDelete = (id) => {
         const confirm = window.confirm('Are You Sure?')
         if (confirm) {
-            fetch(`http://localhost:5000/deleteBuyNow/${id}`, {
+            fetch(`https://stark-plains-85592.herokuapp.com/deleteBuyNow/${id}`, {
                 method: 'DELETE',
                 headers: { "content-type": "application/json" }
             })

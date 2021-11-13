@@ -8,7 +8,7 @@ const MAnageAllOrder = () => {
 
     //data fetched from server
     useEffect(() => {
-        fetch('http://localhost:5000/allBuying')
+        fetch('https://stark-plains-85592.herokuapp.com/allBuying')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [approved])
@@ -16,7 +16,7 @@ const MAnageAllOrder = () => {
     const handleDelete = (id) => {
         const confirm = window.confirm('Are You Sure?')
         if (confirm) {
-            fetch(`http://localhost:5000/deleteBuyNow/${id}`, {
+            fetch(`https://stark-plains-85592.herokuapp.com/deleteBuyNow/${id}`, {
                 method: 'DELETE',
                 headers: { "content-type": "application/json" }
             })
@@ -34,7 +34,7 @@ const MAnageAllOrder = () => {
         status: 'Approved'
     }
     const handleUpdate = (id) => {
-        fetch(`http://localhost:5000/updateStatus/${id}`, {
+        fetch(`https://stark-plains-85592.herokuapp.com/updateStatus/${id}`, {
             method: 'PUT',
             headers: { "content-type": "application/json" },
             body: JSON.stringify(update)

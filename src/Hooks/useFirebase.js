@@ -70,7 +70,7 @@ const useFirebase = () => {
         const user = { email, displayName }
         console.log(user)
         if (email) {
-            fetch('http://localhost:5000/users', {
+            fetch('https://stark-plains-85592.herokuapp.com/users', {
                 method: method,
                 headers: {
                     'content-type': 'application/json'
@@ -81,9 +81,9 @@ const useFirebase = () => {
         }
 
     }
-    //make admin
+    //find admin
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${user.email}`)
+        fetch(`https://stark-plains-85592.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [user.email])
