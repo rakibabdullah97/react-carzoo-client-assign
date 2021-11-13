@@ -23,7 +23,7 @@ const Navigation = () => {
                                     <NavLink className="text-decoration-none mx-3 text-light d-block" to="/login">Log in </NavLink>
                             }
                             {
-                                user.email && <button onClick={logOut} type="button" class="d-block m-2 btn btn-warning btn-sm ">Log Out</button>
+                                user.email && <button onClick={logOut} type="button" className="d-block m-2 btn btn-warning btn-sm ">Log Out</button>
                             }
                            { user?.email && <span
                                className='mx-3'

@@ -51,7 +51,7 @@ const BuyProducts = () => {
         fetch(`https://stark-plains-85592.herokuapp.com/products/${productId}`)
             .then(res => res.json())
             .then(data => setProduct(data))
-    }, [])
+    }, [productId])
     console.log(buying)
 
 

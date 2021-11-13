@@ -6,7 +6,7 @@ const singleReview = ({ review }) => {
     return (
         <div>
             <div>
-                <div className="card text-light bg-success mb-3" style={{ 'max-width': '18rem' }}>
+                <div className="card text-light bg-success mb-3" style={{ 'maxWidth': '18rem' }}>
                     <div className="card-header">Email: {email}</div>
                     <div className="card-body">
                         <Rating

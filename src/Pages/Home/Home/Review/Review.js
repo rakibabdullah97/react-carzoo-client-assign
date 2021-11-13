@@ -22,7 +22,7 @@ const Review = () => {
                     <div className=' row row-cols-1 row-cols-md-4 '>
                         {
                             reviews.map(review=><SingleReview
-                            key={review.id}
+                            key={review._id}
                             review={review}
                             ></SingleReview> )
                         }

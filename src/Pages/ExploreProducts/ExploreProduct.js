@@ -13,7 +13,7 @@ const ExploreProduct = ({ product }) => {
                         <p className="card-text">{info}</p>
                         <h5 className='text-danger'> $ {price}</h5>
                         <Link to={`./buyproducts/${_id}`}>
-                            <button type="button" className="book-btn btn btn-danger">Buy</button>
+                            <button type="button" className="book-btn btn btn-warning">Buy Now</button>
                         </Link>
                     </div>
                 </div>
